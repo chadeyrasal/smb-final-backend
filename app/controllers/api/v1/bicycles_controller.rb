@@ -8,7 +8,7 @@ class Api::V1::BicyclesController < ApplicationController
   end
 
   def create
-    @bicycle = Account.new(bicycle_params)
+    @bicycle = Bicycle.new(bicycle_params)
     if @bicycle.save
       render json: @bicycle
     else
