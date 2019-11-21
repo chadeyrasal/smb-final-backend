@@ -1,22 +1,22 @@
 class Api::V1::BicyclesController < ApplicationController
 
   def index
-    @bicycles = Bicycle.all
-    render json: @bicycles
+    bicycles = Bicycle.all
+    render json: bicycles
   end
 
   def create
-    @bicycle = Bicycle.new(bicycle_params)
-    if @bicycle.save
-      render json: @bicycle
+    bicycle = Bicycle.new(bicycle_params)
+    if bicycle.save
+      render json: bicycle
     else
       render json: { error: "There was an error creating this bicycle" }
     end
   end
 
   def show
-    @bicycle = Bicycle.find(params[:id])
-    render json: @bicycle
+    bicycle = Bicycle.find(params[:id])
+    render json: bicycle
   end
 
 
