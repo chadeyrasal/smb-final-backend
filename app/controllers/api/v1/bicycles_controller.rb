@@ -7,6 +7,9 @@ class Api::V1::BicyclesController < ApplicationController
     elsif params[:neighbourhood_id]
       neighbourhood = Neighbourhood.find(params[:neighbourhood_id])
       bicycles = neighbourhood.bicycles
+    elsif params[:user_id]
+      user = User.find(params[:user_id])
+      bicycles = user.bicycles
     end
     render json: bicycles
   end
