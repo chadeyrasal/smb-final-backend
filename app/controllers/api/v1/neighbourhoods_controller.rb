@@ -1,7 +1,8 @@
 class Api::V1::NeighbourhoodsController < ApplicationController
 
   def index
-    neighbourhoods = Neighbourhood.all
+    city = City.find(params[:city_id])
+    neighbourhoods = city.neighbourhoods
     render json: neighbourhoods
   end
 
