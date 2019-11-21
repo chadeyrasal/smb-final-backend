@@ -2,12 +2,12 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :users
-      resources :trips
-      resources :neighbourhoods
-      resources :countries
-      resources :cities
-      resources :bicycles
+      resources :users, only: [:show, :create]
+      resources :trips, only: [:index, :show, :create]
+      resources :neighbourhoods, only: [:index, :show, :create]
+      resources :countries, only: [:create]
+      resources :cities, only: [:index, :show, :create]
+      resources :bicycles, only: [:index, :show, :create]
     end
   end
 
