@@ -1,7 +1,5 @@
 class Api::V1::NeighbourhoodsController < ApplicationController
 
-  before_action :set_neighbourhood, only: [:show, :destroy]
-
   def index
     @neighbourhoods = Neighbourhood.all
     render json: @neighbourhoods
@@ -17,11 +15,8 @@ class Api::V1::NeighbourhoodsController < ApplicationController
   end
 
   def show
+    @neighbourhood = Neighbourhood.find(params[:id])
     render json: @neighbourhood
-  end
-
-  def destroy
-    @neighbourhood.destroy
   end
 
 
@@ -29,10 +24,6 @@ class Api::V1::NeighbourhoodsController < ApplicationController
 
   def neighbourhood_params
     params.require(:neighbourhood).permit(:name, :city_id)
-  end
-
-  def set_neighbourhood
-    @neighbourhood = Neighbourhood.find(params[:id])
   end
 
 end

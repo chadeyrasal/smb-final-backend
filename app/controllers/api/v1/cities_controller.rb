@@ -1,7 +1,5 @@
 class Api::V1::CitiesController < ApplicationController
 
-  before_action :set_city, only: [:show, :destroy]
-
   def index
     @cities = City.all
     render json: @cities
@@ -17,11 +15,8 @@ class Api::V1::CitiesController < ApplicationController
   end
 
   def show
+    @city = City.find(params[:id])
     render json: @city
-  end
-
-  def destroy
-    @city.destroy
   end
 
 
@@ -30,9 +25,5 @@ class Api::V1::CitiesController < ApplicationController
   def city_params
     params.require(:city).permit(:name, :country_id)
   end
-
-  def set_city
-    @city = City.find(params[:id])
-  end
-
+  
 end
