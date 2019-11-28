@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       resources :neighbourhoods, only: [:show, :create] do
         resources :bicycles, only: [:index]
       end
-      resources :countries, only: [:create]
+      resources :countries, only: [:index, :create]
       resources :cities, only: [:index, :show, :create] do
         resources :bicycles, only: [:index]
         resources :neighbourhoods, only: [:index]

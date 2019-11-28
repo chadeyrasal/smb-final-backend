@@ -1,5 +1,10 @@
 class Api::V1::CountriesController < ApplicationController
 
+  def index
+    countries = Country.all
+    render json: countries
+  end
+
   def create
     country = Country.new(country_params)
     if country.save
