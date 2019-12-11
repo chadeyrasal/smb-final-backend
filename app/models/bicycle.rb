@@ -5,6 +5,7 @@ class Bicycle < ApplicationRecord
   has_many :trips
   has_many :renters, class_name: "User", through: :trips
 
-  validates :bicycle_type, :size, :colour, :title, :description, :price, presence: true
+  validates :bicycle_type, :colour, :title, :description, :price, presence: true
+  validates_inclusion_of :size, in: ["Small", "Medium", "Large"]
 
 end
