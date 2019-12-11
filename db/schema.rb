@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_11_04_192445) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "neighourhoods", force: :cascade do |t|
+  create_table "neighbourhoods", force: :cascade do |t|
     t.string "name"
     t.integer "city_id"
     t.datetime "created_at", null: false
