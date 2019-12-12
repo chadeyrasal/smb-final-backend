@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
       resources :bicycles, only: [:show, :create, :update]
       post '/login', to: 'sessions#create'
+      get '/get_current_user', to: 'sessions#get_current_user'
     end
   end
 
