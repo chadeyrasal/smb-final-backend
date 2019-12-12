@@ -15,6 +15,7 @@ Rails.application.routes.draw do
         resources :neighbourhoods, only: [:index]
       end
       resources :bicycles, only: [:show, :create, :update]
+      post '/login', to: 'sessions#create'
     end
   end
 
