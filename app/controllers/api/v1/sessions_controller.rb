@@ -17,7 +17,7 @@ class Api::V1::SessionsController < ApplicationController
       render json: current_user
     else
       render json: {
-        notice: 'no one logged in'
+        error: 'no one logged in'
       }
     end
   end
