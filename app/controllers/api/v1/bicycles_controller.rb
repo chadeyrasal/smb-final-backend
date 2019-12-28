@@ -28,6 +28,10 @@ class Api::V1::BicyclesController < ApplicationController
     render json: bicycle
   end
 
+  def popular
+    bicycles = Bicycle.latest
+  end
+
 
   private
 
