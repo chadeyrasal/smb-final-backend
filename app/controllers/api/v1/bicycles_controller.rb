@@ -29,6 +29,10 @@ class Api::V1::BicyclesController < ApplicationController
   end
 
   def popular
+    bicycles = Bicycle.popular
+  end
+
+  def latest
     bicycles = Bicycle.latest
   end
 
