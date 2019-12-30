@@ -1,16 +1,7 @@
 class Api::V1::BicyclesController < ApplicationController
 
   def index
-    if params[:city_id]
-      city = City.find(params[:city_id])
-      bicycles = city.bicycles
-    elsif params[:neighbourhood_id]
-      neighbourhood = Neighbourhood.find(params[:neighbourhood_id])
-      bicycles = neighbourhood.bicycles
-    elsif params[:user_id]
-      user = User.find(params[:user_id])
-      bicycles = user.bicycles
-    end
+    bicycles = Bicycle.all
     render json: bicycles
   end
 
