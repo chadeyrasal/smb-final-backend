@@ -14,7 +14,7 @@ Rails.application.routes.draw do
         resources :bicycles, only: [:index]
         resources :neighbourhoods, only: [:index]
       end
-      resources :bicycles, only: [:show, :create, :update]
+      resources :bicycles, only: [:index, :show, :create, :update]
       post '/login', to: 'sessions#create'
       get '/get_current_user', to: 'sessions#get_current_user'
       delete '/logout', to: 'sessions#destroy'
