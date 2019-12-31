@@ -1,4 +1,4 @@
 class NeighbourhoodSerializer < ActiveModel::Serializer
-  attributes :id, :name, :city_id
+  attributes :id, :name, :city
   belongs_to :city
 end
