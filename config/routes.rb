@@ -6,7 +6,7 @@ Rails.application.routes.draw do
         resources :bicycles, only: [:index]
       end
       resources :trips, only: [:index, :show, :create, :update]
-      resources :neighbourhoods, only: [:show, :create] do
+      resources :neighbourhoods, only: [:show, :index, :create] do
         resources :bicycles, only: [:index]
       end
       resources :countries, only: [:index, :create]
