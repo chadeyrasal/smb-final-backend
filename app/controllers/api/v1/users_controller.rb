@@ -11,8 +11,7 @@ class Api::V1::UsersController < ApplicationController
       session[:user_id] = user.id
       render json: user
     else
-      response = { user.errors.full_messages.to_sentence }
-      render json: response,status: :unprocessable_entity
+      render json: user.errors
     end
   end
 
