@@ -3,6 +3,8 @@
 ## Description of Share My Bike
 Share My Bike is a bicycle sharing application that allows a user to create an account> Once the user is registered they can either put their own bicycle up for rent or rent bicycles from people around the world. The application is searchable by cities and each cities has a list of bicycles and a list of neighbourhoods that have bicycles.
 
+You can find the blog article I wrote about this application at: https://medium.com/@annelaure.developer/my-first-full-stack-web-application-8ac82db61b10
+
 ## Built with
 This back-end is built with Ruby and Rails, and separate from the front-end so that it may be reused with a different front-end.
 
