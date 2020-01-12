@@ -6,7 +6,11 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def create
-    trip = Trip.new(trip_params)
+    trip = Trip.new()
+    trip.start_date = params[:startDate]
+    trip.end_date = params[:endDate]
+    trip.bicycle_id = params[:bicycle][:id]
+    trip.renter_id = params[:renter][:id]
     if trip.save
       render json: trip
     else
@@ -23,7 +27,7 @@ class Api::V1::TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:start_date, :end_date, :rating, :review, :bicycle_id, :renter_id)
+    params.permit(:start_date, :end_date, :rating, :review, :bicycle_id, :renter_id)
   end
 
 end
