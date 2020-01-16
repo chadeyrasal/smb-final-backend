@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_01_16_155539) do
     t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "likes"
+    t.integer "likes", default: 0
   end
 
   create_table "countries", force: :cascade do |t|
