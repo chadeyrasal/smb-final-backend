@@ -1,6 +1,6 @@
 class CitySerializer < ActiveModel::Serializer
 
-  attributes :id, :name, :country
+  attributes :id, :name, :country, :likes
 
   belongs_to :country
   has_many :neighbourhoods
